@@ -1,10 +1,12 @@
-<a name="top"></a>
-![.NET](https://img.shields.io/badge/.NET-9.0-512BD4)
-[![language](https://img.shields.io/badge/language-C%23-239120)](https://learn.microsoft.com/ru-ru/dotnet/csharp/tour-of-csharp/overview)
-![OS](https://img.shields.io/badge/OS-linux%2C%20windows%2C%20macOS-0078D4)]
-[![GitHub release](https://img.shields.io/github/v/release/waha-net/waha-net)](#)
+![Language](https://badgen.net/badge/Language/C%23/purple)
+![.NET](https://badgen.net/badge/.NET/.9)
+![OS](https://badgen.net/badge/OS/linux%2C%20windows%2C%20macOS)
+![License](https://badgen.net/github/license/waha-net/waha-aspire-hosting)
+![Release](https://badgen.net/github/release/waha-net/waha-aspire-hosting)
 
-⭐ Star us on GitHub — it motivates us a lot!
+![BuildStatus](https://github.com/Waha-net/waha-aspire-hosting/actions/workflows/dotnet.yml/badge.svg?branch=main)
+
+![Stars](https://badgen.net/github/stars/waha-net/waha-aspire-hosting)⭐ Like what you see? Give us a star — it keeps the code flowing!
 
 # Waha Aspire Hosting
 Provides extension methods and resource definitions for the .NET Aspire AppHost to support running Waha containers.
