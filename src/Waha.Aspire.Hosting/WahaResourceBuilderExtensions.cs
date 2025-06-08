@@ -37,10 +37,20 @@ namespace Aspire.Hosting
                 .WithHttpEndpoint(port: port, targetPort: 3000, name: WahaResource.WahaEndpointName)
                 .WithOtlpExporter()
                 .WithHttpHealthCheck("/")
-                .WithCommand("dashboard", "Call Dashboard",
+                .WithCommand(
+                    "RunWaha",
+                    "Waha Dashboard",
                     executeCommand: context => OnRunDashboardCommandAsync(builder, resource.PrimaryEndpoint.Url, context),
-                    updateState: OnUpdateResourceState,
-                    iconName: "Info")
+                    new CommandOptions()
+                    {
+                        ConfirmationMessage = "Waha dashboard is running. Open it in your browser?",
+                        Description = "Runs the Waha dashboard in your browser.",
+                        IconName = "Info",
+                        IconVariant = IconVariant.Filled,
+                        IsHighlighted = true,
+                        UpdateState = (UpdateCommandStateContext context) => context.ResourceSnapshot.HealthStatus is HealthStatus.Healthy ? ResourceCommandState.Enabled : ResourceCommandState.Disabled
+                    }
+                )
                 .ExcludeFromManifest();
         }
 
@@ -104,13 +114,6 @@ namespace Aspire.Hosting
         {
             Process.Start(new ProcessStartInfo { FileName = url + WAHA_DASHBOARD_PATH, UseShellExecute = true });
             return Task.FromResult(new ExecuteCommandResult() { Success = true });
-        }
-
-        private static ResourceCommandState OnUpdateResourceState(UpdateCommandStateContext context)
-        {
-            return context.ResourceSnapshot.HealthStatus is HealthStatus.Healthy
-                ? ResourceCommandState.Enabled
-                : ResourceCommandState.Disabled;
         }
 
         internal static class WahaContainerImageTags
