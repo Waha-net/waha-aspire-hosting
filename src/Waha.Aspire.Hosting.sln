@@ -7,6 +7,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waha.Aspire.Hosting", "Waha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waha.Aspire.Hosting.Test", "Waha.Aspire.Hosting.Test\Waha.Aspire.Hosting.Test.csproj", "{9772C04F-4704-4E75-9E45-CF3B8078B9CB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Waha Hosting", "Waha Hosting", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample Project", "Sample Project", "{AECBA417-CCE8-4F29-80C2-6ADCEA1E5507}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAspireApp.AppHost", "SampleAspireApp\SampleAspireApp.AppHost\SampleAspireApp.AppHost.csproj", "{62E2BD97-043E-4D0A-AC0E-7BD3D71C3F13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAspireApp.ServiceDefaults", "SampleAspireApp\SampleAspireApp.ServiceDefaults\SampleAspireApp.ServiceDefaults.csproj", "{88E886D1-DE31-7971-5714-BCECAC521E4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAspireApp.ApiService", "SampleAspireApp\SampleAspireApp.ApiService\SampleAspireApp.ApiService.csproj", "{5C6213CC-4D87-3883-7363-C670B9257368}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAspireApp.Web", "SampleAspireApp\SampleAspireApp.Web\SampleAspireApp.Web.csproj", "{84758FC1-77FA-B8D4-4294-8083677FB1AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +33,33 @@ Global
 		{9772C04F-4704-4E75-9E45-CF3B8078B9CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9772C04F-4704-4E75-9E45-CF3B8078B9CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9772C04F-4704-4E75-9E45-CF3B8078B9CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62E2BD97-043E-4D0A-AC0E-7BD3D71C3F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62E2BD97-043E-4D0A-AC0E-7BD3D71C3F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62E2BD97-043E-4D0A-AC0E-7BD3D71C3F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62E2BD97-043E-4D0A-AC0E-7BD3D71C3F13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88E886D1-DE31-7971-5714-BCECAC521E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E886D1-DE31-7971-5714-BCECAC521E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E886D1-DE31-7971-5714-BCECAC521E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E886D1-DE31-7971-5714-BCECAC521E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C6213CC-4D87-3883-7363-C670B9257368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C6213CC-4D87-3883-7363-C670B9257368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C6213CC-4D87-3883-7363-C670B9257368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C6213CC-4D87-3883-7363-C670B9257368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84758FC1-77FA-B8D4-4294-8083677FB1AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84758FC1-77FA-B8D4-4294-8083677FB1AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84758FC1-77FA-B8D4-4294-8083677FB1AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84758FC1-77FA-B8D4-4294-8083677FB1AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F28A1919-C7E7-4DCC-ACC5-8378754FDB67} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{9772C04F-4704-4E75-9E45-CF3B8078B9CB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{62E2BD97-043E-4D0A-AC0E-7BD3D71C3F13} = {AECBA417-CCE8-4F29-80C2-6ADCEA1E5507}
+		{88E886D1-DE31-7971-5714-BCECAC521E4E} = {AECBA417-CCE8-4F29-80C2-6ADCEA1E5507}
+		{5C6213CC-4D87-3883-7363-C670B9257368} = {AECBA417-CCE8-4F29-80C2-6ADCEA1E5507}
+		{84758FC1-77FA-B8D4-4294-8083677FB1AA} = {AECBA417-CCE8-4F29-80C2-6ADCEA1E5507}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {711E1107-242D-4CCE-B38F-BE1DAA671E13}
