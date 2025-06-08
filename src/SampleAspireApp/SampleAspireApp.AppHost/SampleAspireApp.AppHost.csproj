@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Waha.Aspire.Hosting\Waha.Aspire.Hosting.csproj" />
     <ProjectReference Include="..\SampleAspireApp.ApiService\SampleAspireApp.ApiService.csproj" />
     <ProjectReference Include="..\SampleAspireApp.Web\SampleAspireApp.Web.csproj" />
   </ItemGroup>
