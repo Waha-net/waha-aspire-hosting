@@ -36,7 +36,7 @@ namespace Waha.Aspire.Hosting
                 .AddResource(resource)
                 .WithAnnotation(new ContainerImageAnnotation { Image = WahaContainerImageTags.Image, Tag = WahaContainerImageTags.Tag, Registry = WahaContainerImageTags.Registry })
                 .WithHttpEndpoint(port: port, targetPort: 3000, name: WahaResource.WahaEndpointName)
-                .WithOtlpExporter()
+                //.WithOtlpExporter() // Hack: Remove because of issue on container recreation : https://github.com/dotnet/aspire/issues/6889
                 .WithHttpHealthCheck("/")
                 .WithCommand("dashboard", "Call Dashboard",
                     executeCommand: context => OnRunDashboardCommandAsync(builder, resource.PrimaryEndpoint.Url, context),
@@ -106,7 +106,7 @@ namespace Waha.Aspire.Hosting
         internal static class WahaContainerImageTags
         {
             internal const string Registry = "docker.io";
-            internal const string Image = "devlikeapro/waha";
+            internal const string Image = "devlikeapro/waha-plus";
             internal const string Tag = "latest";
         }
     }
