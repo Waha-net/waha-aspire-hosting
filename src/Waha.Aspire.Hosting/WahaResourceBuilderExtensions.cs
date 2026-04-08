@@ -40,8 +40,7 @@ namespace Waha.Aspire.Hosting
                 .WithHttpHealthCheck("/")
                 .WithCommand("dashboard", "Call Dashboard",
                     executeCommand: context => OnRunDashboardCommandAsync(builder, resource.PrimaryEndpoint.Url, context),
-                    updateState: OnUpdateResourceState,
-                    iconName: "Info")
+                    new CommandOptions{ UpdateState = OnUpdateResourceState , IconName = "Info"})
                 .ExcludeFromManifest();
         }
 
@@ -106,7 +105,7 @@ namespace Waha.Aspire.Hosting
         internal static class WahaContainerImageTags
         {
             internal const string Registry = "docker.io";
-            internal const string Image = "devlikeapro/waha-plus";
+            internal const string Image = "devlikeapro/waha"; // "devlikeapro/waha-plus";
             internal const string Tag = "latest";
         }
     }
