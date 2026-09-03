@@ -1,6 +1,6 @@
 ﻿using Aspire.Hosting.ApplicationModel;
 
-namespace Aspire.Hosting
+namespace Waha.Aspire.Hosting
 {
     /// <summary>
     /// Represents a Waha resource which is a type of container resource with a connection string.

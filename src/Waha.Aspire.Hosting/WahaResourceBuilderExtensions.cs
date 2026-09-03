@@ -1,8 +1,9 @@
 ﻿using System.Diagnostics;
+using Aspire.Hosting;
 using Aspire.Hosting.ApplicationModel;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace Aspire.Hosting
+namespace Waha.Aspire.Hosting
 {
     /// <summary>
     /// Provides extension methods for building and configuring Waha resources in a distributed application.
@@ -35,12 +36,11 @@ namespace Aspire.Hosting
                 .AddResource(resource)
                 .WithAnnotation(new ContainerImageAnnotation { Image = WahaContainerImageTags.Image, Tag = WahaContainerImageTags.Tag, Registry = WahaContainerImageTags.Registry })
                 .WithHttpEndpoint(port: port, targetPort: 3000, name: WahaResource.WahaEndpointName)
-                .WithOtlpExporter()
+                //.WithOtlpExporter() // Hack: Remove because of issue on container recreation : https://github.com/dotnet/aspire/issues/6889
                 .WithHttpHealthCheck("/")
                 .WithCommand("dashboard", "Call Dashboard",
                     executeCommand: context => OnRunDashboardCommandAsync(builder, resource.PrimaryEndpoint.Url, context),
-                    updateState: OnUpdateResourceState,
-                    iconName: "Info")
+                    new CommandOptions{ UpdateState = OnUpdateResourceState , IconName = "Info"})
                 .ExcludeFromManifest();
         }
 
@@ -86,17 +86,6 @@ namespace Aspire.Hosting
             return builder.WithVolume(name, mountPath);
         }
 
-        /// <summary>
-        /// Sets the lifetime of the Waha resource container.
-        /// </summary>
-        /// <param name="builder">The resource builder.</param>
-        /// <param name="lifetime">The container lifetime.</param>
-        /// <returns>An <see cref="IResourceBuilder{WahaResource}"/> for further configuration.</returns>
-        public static IResourceBuilder<WahaResource> WithLifetime(this IResourceBuilder<WahaResource> builder, ContainerLifetime lifetime)
-        {
-            return builder.WithAnnotation(new ContainerLifetimeAnnotation { Lifetime = lifetime });
-        }
-
         private static Task<ExecuteCommandResult> OnRunDashboardCommandAsync(
             IDistributedApplicationBuilder builder,
             string url,
@@ -116,7 +105,7 @@ namespace Aspire.Hosting
         internal static class WahaContainerImageTags
         {
             internal const string Registry = "docker.io";
-            internal const string Image = "devlikeapro/waha";
+            internal const string Image = "devlikeapro/waha"; // "devlikeapro/waha-plus";
             internal const string Tag = "latest";
         }
     }

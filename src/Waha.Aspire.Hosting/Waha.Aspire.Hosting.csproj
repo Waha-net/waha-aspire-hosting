@@ -1,41 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
-		<RootNamespace>Waha.Aspire.Hosting</RootNamespace>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Authors>fabio.caldas</Authors>
-		<Company>Waha-net</Company>
-		<PackageProjectUrl>https://github.com/Waha-net/waha-aspire-hosting</PackageProjectUrl>
-		<Description>Provides extension methods and resource definitions for the .NET Aspire AppHost to support running Waha containers.</Description>
-		<PackageTags>waha, whatsapp</PackageTags>
-		<RepositoryUrl>https://github.com/Waha-net/waha-aspire-hosting</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<UserSecretsId>ec357b32-c2e6-43eb-a747-2d9714c93088</UserSecretsId>
-	</PropertyGroup>
-
-	<PropertyGroup>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-	</PropertyGroup>
-
-	<PropertyGroup>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<!-- If all members are not documented, you can disable the compiler warnings -->
-		<NoWarn>$(NoWarn);CS1591</NoWarn>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-	</PropertyGroup>
-
-	<ItemGroup>
-	  <None Include="..\..\README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Aspire.Hosting" Version="9.0.0" />
-	</ItemGroup>
-
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <RootNamespace>Waha.Aspire.Hosting</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Authors>fabio.caldas</Authors>
+        <Company>Waha-net</Company>
+        <PackageProjectUrl>https://github.com/Waha-net/waha-aspire-hosting</PackageProjectUrl>
+        <Description>Provides extension methods and resource definitions for the .NET Aspire AppHost to support running Waha containers.</Description>
+        <PackageTags>waha, whatsapp</PackageTags>
+        <RepositoryUrl>https://github.com/Waha-net/waha-aspire-hosting</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <UserSecretsId>ec357b32-c2e6-43eb-a747-2d9714c93088</UserSecretsId>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+    <PropertyGroup>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <!-- If all members are not documented, you can disable the compiler warnings -->
+        <NoWarn>$(NoWarn);CS1591</NoWarn>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="13.5.3" />
+    </ItemGroup>
 </Project>
